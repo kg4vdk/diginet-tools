@@ -1,0 +1,341 @@
+//fldigi macro definition file extended
+// This file defines the macro structure(s) for the digital modem program, fldigi
+// It also serves as a basis for any macros that are written by the user
+//
+// The top line of this file should always be the first line in every macro 
+// definition file (.mdf) for the fldigi program to recognize it as such.
+//
+
+//
+// Macro # 1
+/$ 0 PREAMBLE
+<EXEC>\n
+touch $HOME/Desktop/diginet-roster.txt\n
+touch $HOME/Desktop/diginet-comment-1.txt\n
+touch $HOME/Desktop/diginet-comment-2.txt\n
+</EXEC>\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+CALLING ALL RADIO AMATEURS\n
+CALLING ALL RADIO AMATEURS\n
+\n
+--\n
+\n
+THIS IS <MYCALL>, MY NAME IS <MYNAME>, AND I WILL BE NET CONTROL FOR SRARC'S DIGINET.\n
+\n
+IN A MOMENT, I WILL BEGIN TAKING CHECK-INS .\n
+\n
+--\n
+\n
+WHEN CHECKING IN, PLEASE USE THE FOLLOWING FORMAT:\n
+\n
+<MYCALL>\n
+<MYNAME>\n
+<MYQTH>\n
+<MYLOC>\n
+\n
+IF YOU HAVE TRAFFIC, PLEASE INCLUDE A BRIEF SUMMARY.\n
+\n
+# EXAMPLE #\n
+TRAFFIC: NEWS - 1.5KB TXT FILE\n
+\n
+--\n
+\n
+PLEASE LISTEN FOR OTHER TRAFFIC BEFORE TRANSMITTING,\n
+AND ENSURE YOUR STATION RETURNS TO RECEIVE MODE AFTERWARD.\n
+\n
+--\n
+\n
+BREAK
+
+//
+// Macro # 2
+/$ 1 CHK-INS
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+<EXEC>\n
+if [ -s $HOME/Desktop/diginet-roster.txt ]; then\n
+   echo "ACKNOWLEDGING:"\n
+   echo\n
+   cat $HOME/Desktop/diginet-roster.txt\n
+   echo\n
+   echo "ARE THERE ANY OTHER STATIONS WISHING TO CHECK-IN?"\n
+else\n
+   echo "ARE THERE ANY STATIONS WISHING TO CHECK-IN?"\n
+fi\n
+</EXEC>
+
+//
+// Macro # 3
+/$ 2 CUSTOM
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+
+
+//
+// Macro # 4
+/$ 3 CLOSE
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+THANK YOU FOR JOINING! HERE IS THE FINAL ROSTER FOR THIS NET:\n
+\n
+<EXEC>cat $HOME/Desktop/diginet-roster.txt</EXEC>\n
+\n
+THIS CONCLUDES THE SRARC DIGINET. PLEASE, JOIN US NEXT WEEK!
+
+//
+// Macro # 5
+/$ 4 FLAMP
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+STANDBY FOR FILE TRANSMISSION VIA FLAMP.\n
+\n
+PLEASE ENSURE THE FLAMP APPLICATION IS RUNNING.\n
+\n
+WHEN TRANSMISSION IS COMPLETE,\n
+USE THE "REPORT" FUNCTION TO REQUEST ANY MISSING BLOCKS.\n
+\n
+FILE TRANSMISSION WILL BEGIN IN APPROXIMATELY 30 SECONDS...
+
+//
+// Macro # 6
+/$ 5 FLMSG
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+STANDBY FOR FORM TRANSMISSION VIA FLMSG.\n
+\n
+PLEASE ENSURE THE FLMSG APPLICATION IS RUNNING.\n
+\n
+FORM TRANSMISSION WILL BEGIN IN APPROXIMATELY 30 SECONDS...
+
+//
+// Macro # 7
+/$ 6 COMM 1
+<EXEC>\n
+if [ -s $HOME/Desktop/diginet-comment-1.txt ]; then\n
+   cat $HOME/Desktop/diginet-comment-1.txt\n
+fi\n
+</EXEC>
+
+//
+// Macro # 8
+/$ 7 COMM 2
+<EXEC>\n
+if [ -s $HOME/Desktop/diginet-comment-2.txt ]; then\n
+   cat $HOME/Desktop/diginet-comment-2.txt\n
+fi\n
+</EXEC>
+
+//
+// Macro # 9
+/$ 8 RSID x3
+<TX><NRSID:3><RX>
+
+//
+// Macro # 10
+/$ 9 Tx @>>
+<TX>
+
+//
+// Macro # 11
+/$ 10 RX @||
+<RX>
+
+//
+// Macro # 12
+/$ 11 TX @>|
+<TX>\n
+\n
+DE <MYCALL>, NET CONTROL\n
+<RX>
+
+//
+// Macro # 13
+/$ 12 
+
+
+//
+// Macro # 14
+/$ 13 
+
+
+//
+// Macro # 15
+/$ 14 
+
+
+//
+// Macro # 16
+/$ 15 
+
+
+//
+// Macro # 17
+/$ 16 
+
+
+//
+// Macro # 18
+/$ 17 
+
+
+//
+// Macro # 19
+/$ 18 
+
+
+//
+// Macro # 20
+/$ 19 
+
+
+//
+// Macro # 21
+/$ 20 
+
+
+//
+// Macro # 22
+/$ 21 
+
+
+//
+// Macro # 23
+/$ 22 
+
+
+//
+// Macro # 24
+/$ 23 
+
+
+//
+// Macro # 25
+/$ 24 
+
+
+//
+// Macro # 26
+/$ 25 
+
+
+//
+// Macro # 27
+/$ 26 
+
+
+//
+// Macro # 28
+/$ 27 
+
+
+//
+// Macro # 29
+/$ 28 
+
+
+//
+// Macro # 30
+/$ 29 
+
+
+//
+// Macro # 31
+/$ 30 
+
+
+//
+// Macro # 32
+/$ 31 
+
+
+//
+// Macro # 33
+/$ 32 
+
+
+//
+// Macro # 34
+/$ 33 
+
+
+//
+// Macro # 35
+/$ 34 
+
+
+//
+// Macro # 36
+/$ 35 
+
+
+//
+// Macro # 37
+/$ 36 
+
+
+//
+// Macro # 38
+/$ 37 
+
+
+//
+// Macro # 39
+/$ 38 
+
+
+//
+// Macro # 40
+/$ 39 
+
+
+//
+// Macro # 41
+/$ 40 
+
+
+//
+// Macro # 42
+/$ 41 
+
+
+//
+// Macro # 43
+/$ 42 
+
+
+//
+// Macro # 44
+/$ 43 
+
+
+//
+// Macro # 45
+/$ 44 
+
+
+//
+// Macro # 46
+/$ 45 
+
+
+//
+// Macro # 47
+/$ 46 
+
+
+//
+// Macro # 48
+/$ 47 
+
