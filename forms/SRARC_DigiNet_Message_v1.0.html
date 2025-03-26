@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SRARC DigiNet Message v1.0</title>
+	<meta name="EDITABLE" content="true">
+	<meta name="Menu_Item" content="SRARC DigiNet Message v1.0">
+	
+<style>
+	table {
+		width: 760px;
+	}
+	
+	.form-body {
+		background-color: #f0f0f0;
+	}
+	
+	#header {
+		text-align: center;
+		font-size:24px;
+		font-weight: bold;
+		background-color: #e0e0e0;
+	}
+	
+	#header-text {
+
+	}
+	
+	.field-label {
+		font-size: 12px;
+		font-weight: bold;
+	}
+	
+	.field-description {
+		display: none;
+		font-size: 12px;
+		font-style: italic;
+	}
+	
+	#message-precedence-div {
+		text-align: left;
+	}
+	
+	#end-of-message {
+		text-align: center;
+
+	}
+	
+	input[type=submit] {
+		padding: 10px;
+ 		margin-top: 10px;
+  		text-transform: uppercase;
+  		font-weight: bold;
+  		background-color: #fe7070;
+  		width: 760px;
+  		font-size: 24px;
+  		font-family: inherit;
+  	}
+	
+	#instructions-header {
+		text-align: center;
+		font-size: 18px;
+		background-color: #e0e0e0;
+	}
+	
+	#instructions-header p {
+		margin: 0;
+	}
+	
+	#instructions-body {
+		font-size: 12px;
+		background-color: #f0f0f0;
+	}
+	
+	#revision {
+		text-align: right;
+		font-size: 10px;
+		font-weight: bold;
+	}
+	
+	.all-caps {
+		text-transform: uppercase;
+	}
+	
+	textarea {
+		width: 99%;
+		resize: vertical;
+		overflow: auto;
+	}
+	
+	#submitted {
+		display: none;
+		width: 760px;
+		height: 55px;
+		background-color: #88e787;
+		text-align: center;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 56px;
+		margin-top: -9px;
+	}
+
+	
+	@media print {
+	    #instructions, .field-description {
+	    	display: none;
+	    }
+	    
+	    #message-precedence {
+			appearance: none;
+			border: none;
+		}
+		
+		input, select {
+			font-weight: bold;
+		}
+		
+		input[type=submit] {
+			display: none;
+		}
+		
+		#submitted {
+			display: none !important;
+		}
+	}
+</style>
+</head>
+
+<body>
+
+<form>
+	<table cellspacing="0" cellpadding="4" border="3">
+		<tbody class="form-body">
+			<tr id="header"> 
+				<td colspan="3">
+					<p id="header-text">*** SRARC DIGINET MESSAGE ***</p>
+					<div id="revision">v1.0</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table id="instructions" width="760px" cellspacing="0" cellpadding="4" border="3">
+		<tbody>
+			<tr id="instructions-header">
+				<td>
+					<p><b>INSTRUCTIONS</b></p>
+				</td>
+			</tr>
+			<tr id="instructions-body">
+				<td>
+					<ol>
+						<li><b>TO:</b> Destination station or alias.</li>
+						<li><b>FROM:</b> Originating station or alias.</li>
+						<li><b>URGENCY:</b> Select based on situational requirements.</li>
+						<li><b>DATE/TIME:</b> YYYY-MM-DD HH:MMZ.</li>
+						<li><b>SUBJECT:</b> Brief description of message topic.</li>
+						<li><b>MESSAGE:</b> Message to be transmitted.</li>
+					</ol>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table width="760px" cellspacing="0" cellpadding="4" border="3">
+		<tbody>
+			<tr> 
+				<td>
+					<span class="field-label">1. TO:</span> <span class="field-description">(Destination)</span>
+					<br>
+					<input class="all-caps" name="TO" type="TEXT" id="TO" size="25">
+				</td>
+				<td>
+					<span class="field-label">2. FROM:</span> <span class="field-description">(Origination)</span>
+					<br>	
+					<input class="all-caps" name="FROM" type="TEXT" id="FROM" size="25">
+				</td>
+				<td>
+					<span class="field-label">3. URGENCY:</span>
+					<br>
+					<div id="message-precedence-div">
+					<select id="message-precedence" name="URG" id="URG">
+						<option value="ROUTINE"selected="selected">ROUTINE</option>
+						<option value="PRIORITY">PRIORITY</option>
+						<option value="IMMEDIATE">IMMEDIATE</option>
+						<option value="FLASH">FLASH</option>
+					</select>
+					</div>
+				</td>
+			</tr>
+			<tr> 
+				<td>
+					<span class="field-label">4. DATE/TIME:</span> <span class="field-description">(YYYY-MM-DD HH:MMZ)</span>
+					<br>
+					<input name="DTG" type="TEXT" id="DTG" size="25">
+				</td>      
+				<td colspan="2">
+					<span class="field-label">5. SUBJECT:</span> <span class="field-description">(Brief description of topic)</span>
+					<br>
+					<div>
+						<input class="all-caps" name="SUBJ" type="TEXT" id="SUBJ" size="50">
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table cellspacing="0" cellpadding="4" border="3">
+		<tbody class="form-body">
+			<tr> 
+				<td>
+					<span class="field-label">6. MESSAGE:</span> <span class="field-description">(Enter message.)</span>
+					<br>
+					<div style="margin: auto;">
+						<textarea name="MSG" rows="10" id="MSG" wrap="SOFT"></textarea>
+					</div>
+				</td>
+			</tr>
+			<tr id="end-of-message"> 
+				<td>
+					<b>*** END OF MESSAGE ***</b>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+
+<br>
+<p id="submitted"></p>
+<span style="page-break-after: always;">&nbsp;</span>
+
+</body>
+
+<script> 
+  // Get the current date 
+  const currentDate = new Date().toISOString();
+  
+  function replaceRange(s, start, end, substitute) {
+    return s.substring(0, start) + substitute + s.substring(end);
+  }
+ 
+  var currentDateDTG = replaceRange(currentDate, 16, 23, "").replace(/T/, " ");
+  
+  // Set the value of the input field to the current date 
+  document.getElementById('DTG').value = currentDateDTG;
+  
+  // Set "To:" field to preset value
+  document.getElementById('TO').value = "DIGINET";
+  
+  if (window.location.href.indexOf("handle_post_request") > -1) {
+	//alert("Form submitted. Please use the AutoSend function in FLMSG to transmit the form.");
+	document.getElementById('submitted').style.display = "block";
+	document.getElementById('submitted').innerHTML = "FORM SUBMITTED TO FLMSG<br><span style='font-size: 12px; font-style: italic;'>To transmit the form, use AutoSend in FLMSG. This window can be closed.</span>";
+  };
+</script>
+
+</html>
