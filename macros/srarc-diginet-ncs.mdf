@@ -9,11 +9,7 @@
 //
 // Macro # 1
 /$ 0 PREAMBLE
-<EXEC>\n
-touch $HOME/Desktop/diginet-roster.txt\n
-touch $HOME/Desktop/diginet-comment-1.txt\n
-touch $HOME/Desktop/diginet-comment-2.txt\n
-</EXEC>\n
+\n
 \n
 *** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
 \n
@@ -22,9 +18,11 @@ CALLING ALL RADIO AMATEURS\n
 \n
 --\n
 \n
-THIS IS <MYCALL>, MY NAME IS <MYNAME>, AND I WILL BE NET CONTROL FOR SRARC'S DIGINET.\n
+THIS IS <MYCALL>, MY NAME IS <MYNAME>, AND I WILL BE NET CONTROL FOR THIS DIGINET.\n
 \n
-IN A MOMENT, I WILL BEGIN TAKING CHECK-INS .\n
+IN A MOMENT, I WILL BEGIN TAKING CHECK-INS.\n
+\n
+MORE INFORMATION ABOUT THIS NET CAN BE FOUND AT HTTPS://SRARCTN.ORG/DIGINET\n
 \n
 --\n
 \n
@@ -51,7 +49,7 @@ BREAK
 
 //
 // Macro # 2
-/$ 1 CHK-INS
+/$ 1 REG CHK-INS
 \n
 \n
 *** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
@@ -167,13 +165,21 @@ DE <MYCALL>, NET CONTROL\n
 
 //
 // Macro # 14
-/$ 13 
-
+/$ 13 VOX CHK-INS
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+ARE THERE ANY STATIONS WISHING TO CHECK-IN BY VOICE?
 
 //
 // Macro # 15
-/$ 14 
-
+/$ 14 TRY AGAIN
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+LAST STATION, PLEASE TRY AGAIN.
 
 //
 // Macro # 16
@@ -282,8 +288,12 @@ DE <MYCALL>, NET CONTROL\n
 
 //
 // Macro # 37
-/$ 36 
-
+/$ 36 FILES
+<EXEC>\n
+touch $HOME/Desktop/diginet-roster.txt\n
+touch $HOME/Desktop/diginet-comment-1.txt\n
+touch $HOME/Desktop/diginet-comment-2.txt\n
+</EXEC>
 
 //
 // Macro # 38
@@ -322,20 +332,20 @@ DE <MYCALL>, NET CONTROL\n
 
 //
 // Macro # 45
-/$ 44 
-
+/$ 44 MT63-2KL
+<MODEM:MT63-2KL>
 
 //
 // Macro # 46
-/$ 45 
-
+/$ 45 BPSK500
+<MODEM:BPSK500>
 
 //
 // Macro # 47
-/$ 46 
-
+/$ 46 CON 4/250
+<MODEM:Cont-4/250>
 
 //
 // Macro # 48
-/$ 47 
-
+/$ 47 MFSK32
+<MODEM:MFSK32>
