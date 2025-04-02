@@ -56,7 +56,7 @@ BREAK
 \n
 <EXEC>\n
 if [ -s $HOME/Desktop/diginet-roster.txt ]; then\n
-   echo "ACKNOWLEDGING:"\n
+   echo "ACKNOWLEDGED:"\n
    echo\n
    cat $HOME/Desktop/diginet-roster.txt\n
    echo\n
@@ -152,7 +152,7 @@ fi\n
 
 //
 // Macro # 12
-/$ 11 TX @>|
+/$ 11 TX (NCS) @>|
 <TX>\n
 \n
 DE <MYCALL>, NET CONTROL\n
@@ -179,7 +179,7 @@ ARE THERE ANY STATIONS WISHING TO CHECK-IN BY VOICE?
 \n
 *** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
 \n
-LAST STATION, PLEASE TRY AGAIN.
+UNABLE TO COPY. LAST STATION, PLEASE TRY AGAIN.
 
 //
 // Macro # 16
@@ -223,8 +223,11 @@ LAST STATION, PLEASE TRY AGAIN.
 
 //
 // Macro # 24
-/$ 23 
-
+/$ 23 TX @>|
+<TX>\n
+\n
+DE <MYCALL>\n
+<RX>
 
 //
 // Macro # 25
@@ -233,13 +236,31 @@ LAST STATION, PLEASE TRY AGAIN.
 
 //
 // Macro # 26
-/$ 25 
-
+/$ 25 LATE CHK-INS
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+<EXEC>\n
+if [ -s $HOME/Desktop/diginet-roster.txt ]; then\n
+   echo "ACKNOWLEDGED:"\n
+   echo\n
+   cat $HOME/Desktop/diginet-roster.txt\n
+   echo\n
+   echo "LAST CALL...ARE THERE ANY OTHER STATIONS WISHING TO CHECK-IN?"\n
+else\n
+   echo "LAST CALL...ARE THERE ANY STATIONS WISHING TO CHECK-IN?"\n
+fi\n
+</EXEC>
 
 //
 // Macro # 27
-/$ 26 
-
+/$ 26 DOUBLE
+\n
+\n
+*** DIGINET - <LDT:%b %d %H:%M %Z> ***\n
+\n
+MULTIPLE STATIONS AT ONCE. PLEASE TRY AGAIN.
 
 //
 // Macro # 28
@@ -297,8 +318,15 @@ touch $HOME/Desktop/diginet-comment-2.txt\n
 
 //
 // Macro # 38
-/$ 37 
-
+/$ 37 SELF CHK-IN
+\n
+\n
+<MYCALL>\n
+<MYNAME>\n
+<MYQTH>\n
+<MYLOC>\n
+<EXEC>uptime --pretty | sed 's/up /UPTIME: /'</EXEC>\n
+No Traffic
 
 //
 // Macro # 39
@@ -307,8 +335,11 @@ touch $HOME/Desktop/diginet-comment-2.txt\n
 
 //
 // Macro # 40
-/$ 39 
-
+/$ 39 CLR ALL
+<CLRRX>\n
+<CLRTX>\n
+<CLRQSO>\n
+<CLRLOG>
 
 //
 // Macro # 41
