@@ -9,4 +9,7 @@ This directory contains custom forms for use in FLamp.
 This directory contains a PGP public/private key pair for on-air signing and off-air encryption (experimental use only).
 
 ### Macros
-This directory contains Net Control macros for FLdigi (Linux Only).
+This directory contains Net Control macros for FLdigi.
+
+### Software
+This directory contains software that may be used during DigiNet. 
