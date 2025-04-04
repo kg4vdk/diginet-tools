@@ -1,6 +1,6 @@
-# SRARC DigiNet
+# DigiNet Tools
 
-The files contained in this repo are designed for use in the SRARC DigiNet.
+The files contained in this repo are designed for use in running a DigiNet.
 
 ### Forms
 This directory contains custom forms for use in FLamp.
