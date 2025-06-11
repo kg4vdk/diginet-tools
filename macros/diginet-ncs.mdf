@@ -287,13 +287,13 @@ MULTIPLE STATIONS AT ONCE. PLEASE TRY AGAIN.
 
 //
 // Macro # 33
-/$ 32 
-
+/$ 32 FSQ
+<MODEM:FSQ>
 
 //
 // Macro # 34
-/$ 33 
-
+/$ 33 OLV 8/500
+<MODEM:OLIVIA-8/500>
 
 //
 // Macro # 35
