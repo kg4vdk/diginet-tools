@@ -302,8 +302,11 @@ MULTIPLE STATIONS AT ONCE. PLEASE TRY AGAIN.
 
 //
 // Macro # 36
-/$ 35 
-
+/$ 35 TX (NO DE) @>|
+\n
+\n
+<TX>\n
+<RX>
 
 //
 // Macro # 37
